@@ -1,9 +1,9 @@
 from django.urls import path
-
-from . import views
+from listings import views
+from django.urls import path
 
 urlpatterns = [
     path('', views.index, name='listings'),
-    path('listings', views.listing, name='listing'),
-    path('search', views.search, name='search')
+    path('<int:listing_id>', views.list, name='list'),
+    path('search', views.search, name='search'),
 ]
